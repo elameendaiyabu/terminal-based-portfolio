@@ -5,7 +5,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 <div class="text-[#B1B9D9] overflow-hidden text-md font-extrabold">
 	<p>Welcome to my terminal based portfolio.</p>
 	<p>----------</p>
-	<p>This project's source code can be found <a class="text-[#A6D599] underline" href="">here</a></p>
+	<p>This project's source code can be found <a class="text-[#A6D599] underline" href="https://github.com/elameendaiyabu/terminal-based-portfolio" target="_blank">here</a></p>
 	<p>For a list of all available commands, type <span class="text-[#E6CDA0]">"help"</span></p>
 	<p>----------</p>
 
