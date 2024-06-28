@@ -2,7 +2,7 @@ import "./style.css";
 import { caretFocus, handleSubmit } from "./utils";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-<div class="text-[#B1B9D9] text-lg leading-9">
+<div class="text-[#B1B9D9] overflow-hidden text-md font-extrabold">
 	<p>Welcome to my terminal based portfolio.</p>
 	<p>----------</p>
 	<p>This project's source code can be found <a class="text-[#A6D599] underline" href="">here</a></p>

@@ -3,7 +3,7 @@ import { terminalCommand } from "./commands";
 export function handleSubmit(form: HTMLFormElement, input: HTMLInputElement) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const command = input.value.trim();
+    const command: string = input.value.trim();
 
     if (!command) {
       appendOutput(command, true);
@@ -16,6 +16,9 @@ export function handleSubmit(form: HTMLFormElement, input: HTMLInputElement) {
 
     input.value = "";
     input.focus();
+
+    scrollToBottom();
+    pageScroll();
   });
 }
 
@@ -33,14 +36,23 @@ function appendOutput(text: string, cmdLine: boolean = false) {
 `;
   } else {
     outputDiv!.innerHTML = `
-                <p class="text-[#91d5cc]">${text}</p>
+                <p class="text-[#FAC9F2] mb-2">${text}</p>
 `;
   }
 
   document.querySelector<HTMLDivElement>("#output")!.appendChild(outputDiv);
+  scrollToBottom();
+  pageScroll();
+}
 
-  const appDiv = document.querySelector<HTMLDivElement>("#app")!;
+export function scrollToBottom() {
+  const appDiv = document.getElementById("main")!;
   appDiv.scrollTop = appDiv.scrollHeight;
+  pageScroll();
+}
+
+function pageScroll() {
+  window.scrollBy(0, 50); // horizontal and vertical scroll increments
 }
 
 export function caretFocus(value: HTMLInputElement) {
